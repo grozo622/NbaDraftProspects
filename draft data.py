@@ -52,12 +52,12 @@ pdata.info()
 # In[6]:
 
 
-#ok so I have player draft data from 2015 - 2019
-#I think NBAWS = NBA Win Shares is an important value to look at...
-#or even NBAWS48 = NBA Win Shares per 48 minutes
+#player draft data from 2015 - 2019
+#NBAWS = NBA Win Shares is an important value to look at...
+#or NBAWS48 = NBA Win Shares per 48 minutes
 
-#BUT players have different WS because of different # of years in the league
-#so, let's make a column NBAWS/yr ... where we divide NBAWS / Tenure
+#players have different WS because of different # of years in the league
+#let's make a column NBAWS/yr ... where we divide NBAWS / Tenure
 
 pdata['NBAWS/Tenure'] = pdata['NBAWS']/pdata['Tenure']
 
@@ -117,7 +117,7 @@ corr_matrix_1['NBAWS/Tenure'].sort_values(ascending=False)
 # In[15]:
 
 
-#interesting, NCAAORB leads to showing best NBA Win shares.. could mean they put in most effort...
+#interesting, NCAAORB leads to showing best NBA Win shares.. they put in most effort/dominate the boards...
 
 c_data['Reb/Min'] = (c_data['NCAARPG'] / c_data['NCAAMPG']) * c_data['height']
 #eh...
@@ -302,9 +302,9 @@ corr_matrix_10['Pick'].sort_values(ascending=False)
 
 #NBA Draft order ***(Picks 1-60)***
 
-#SO, read these correlations as the opposite... Higher picks are lower numbers (top 10 Picks are best players)
+#read these correlations as the opposite... Higher picks are lower numbers (top 10 Picks are best players)
 
-#so top 10 players are correlated with YrsNCAA, they have a LOW # of years in the NCAA, usually Freshman enter
+#top 10 players are correlated with YrsNCAA, they have a LOW # of years in the NCAA, usually Freshman enter
 #NBA draft early
 
 #then ALL other variables are - negatively correlated, meaning that "As Pick goes down (5, 4, 3, 2, 1),
@@ -330,7 +330,7 @@ corr_matrix_11['NBABPM'].sort_values(ascending=False)
 # In[ ]:
 
 
-#NBA ***BPM*** has weakest correlations with NCAA data...
+#NBA BPM has weakest correlations with NCAA data...
 
 #Best is neg. correl with NCAA 3PA (-0.1573), 3PM (-0.145961), FGA (-0.137), YrsNCAA (-0.1256), then Height (+0.122181)
 
