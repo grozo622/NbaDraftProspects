@@ -20,6 +20,12 @@ import seaborn as sns  # pretty plotting
 
 # In[2]:
 
+#Data comes from:
+#https://www.sports-reference.com/cbb/
+#and
+#https://www.basketball-reference.com/
+
+#I combined past years NCAA data with current NBA player data for each player/record
 
 draft_prospects = pd.read_csv('NBA Draft Prospect Data Final.csv')
 
@@ -38,7 +44,6 @@ draft_prospects.shape
 
 
 pdata = draft_prospects.dropna(axis=0, how="all")
-pdata = pdata.drop(['InstaFollowers', 'FacebFollowers', 'TwFollows'], axis=1)
 
 pdata
 
